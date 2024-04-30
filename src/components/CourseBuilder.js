@@ -1,16 +1,16 @@
-import React, {useReducer} from "react";
+import React, { useReducer } from "react";
 import LessonBuilder from "./LessonBuilder";
 import FormFieldLayout from "./FormFieldLayout";
 import uuid from "uuid/v4";
 
-const initState = course => {
+const initState = (course) => {
   return !course
     ? {
         courseId: uuid(),
         courseTitle: "",
         category: "UI/UX",
         lessonCount: 0,
-        lessons: []
+        lessons: [],
       }
     : course;
 };
@@ -20,12 +20,12 @@ const courseReducer = (state, action) => {
     case "SET_TITLE":
       return {
         ...state,
-        courseTitle: action.title
+        courseTitle: action.title,
       };
     case "SET_CATEGORY":
       return {
         ...state,
-        category: action.category
+        category: action.category,
       };
     case "ADD_LESSON":
       return {
@@ -36,15 +36,15 @@ const courseReducer = (state, action) => {
           {
             lessonId: action.lesson.lessonId,
             title: action.lesson.lessonTitle,
-            type: action.lesson.lessonType
-          }
-        ]
+            type: action.lesson.lessonType,
+          },
+        ],
       };
     case "DELETE_LESSON":
       return {
         ...state,
         lessonCount: state.lessonCount - 1,
-        lessons: state.lessons.filter(l => l.lessonId !== action.lessonId)
+        lessons: state.lessons.filter((l) => l.lessonId !== action.lessonId),
       };
     default: {
       throw new Error("This action could not be handled!");
@@ -52,7 +52,12 @@ const courseReducer = (state, action) => {
   }
 };
 
-const CourseBuilder = ({course, onCreate, onCancel}) => {
+const CourseBuilder = ({ course, onCreate, onCancel }) => {
+  /* dispatcher take object as a trigger to update state, state is the actually data that has been
+   * updated, courseReducer which is the first parameter of useReducer is a main the transform state
+   * into another, where the second parameter is use to popular the default state, however the third parameter will take the second parameter and run against it, in our case initState will check if
+   * it has value if not it will return value back as an updated initial state.
+   */
   const [state, dispatch] = useReducer(courseReducer, course, initState);
   return (
     <div className="course-builder">
@@ -61,16 +66,18 @@ const CourseBuilder = ({course, onCreate, onCancel}) => {
         <input
           type="text"
           value={state.courseTitle}
-          onChange={e => dispatch({type: "SET_TITLE", title: e.target.value})}
+          onChange={(e) =>
+            dispatch({ type: "SET_TITLE", title: e.target.value })
+          }
         />
       </FormFieldLayout>
       <FormFieldLayout title="Category">
         <select
           value={state.category}
-          onChange={e =>
+          onChange={(e) =>
             dispatch({
               type: "SET_CATEGORY",
-              category: e.target.value
+              category: e.target.value,
             })
           }
         >
@@ -83,13 +90,13 @@ const CourseBuilder = ({course, onCreate, onCancel}) => {
       </FormFieldLayout>
       <LessonBuilder
         lessons={state.lessons}
-        onAdd={lesson =>
+        onAdd={(lesson) =>
           dispatch({
             type: "ADD_LESSON",
-            lesson
+            lesson,
           })
         }
-        onRemove={lessonId => dispatch({type: "DELETE_LESSON", lessonId})}
+        onRemove={(lessonId) => dispatch({ type: "DELETE_LESSON", lessonId })}
       />
       <button
         className="course-action-btn"
