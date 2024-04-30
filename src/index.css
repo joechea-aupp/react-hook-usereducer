@@ -1,0 +1,250 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  border: 1px solid;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  margin: auto;
+}
+
+.crs-title {
+  position: relative;
+  font-size: 30px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.form-field-holder {
+  position: relative;
+  width: 800px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 1px;
+}
+
+.form-field-title {
+  position: absolute;
+  width: 300px;
+  height: 50px;
+  top: 0px;
+  left: 0px;
+  background-color: rgb(92, 92, 92);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 20px;
+  padding: 12px;
+  box-sizing: border-box;
+  display: inline-flex;
+}
+
+.form-field-input {
+  position: absolute;
+  width: 500px;
+  height: 50px;
+  left: 300px;
+  background-color: rgb(133, 133, 133);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 20px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.form-field-input > input,
+select {
+  position: absolute;
+  font-size: 31px;
+  top: 5px;
+  left: 3px;
+  width: 490px;
+  outline: none;
+  border: none;
+}
+
+.lesson-builder {
+  position: relative;
+  width: 800px;
+  border-top: 10px solid rgb(73, 73, 73);
+  height: 550px;
+  border-bottom: 1px solid rgb(216, 216, 216);
+  overflow: hidden;
+}
+
+.lb-title {
+  position: relative;
+  font-size: 15px;
+  padding: 10px;
+  background-color: rgba(15, 87, 155, 0.9);
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.lb-title > button {
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  top: 5px;
+}
+
+.lb-lessons {
+  position: relative;
+
+  height: 510px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  top: 1px;
+}
+
+.form-field-holder > button {
+  position: relative;
+  right: 10px;
+  font-size: 20px;
+  top: 2px;
+  left: 10px;
+  margin: 5px;
+  background-color: rgb(65, 65, 65);
+  color: rgb(255, 255, 255);
+  padding: 5px;
+}
+
+.lessons {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.lesson-title {
+  position: absolute;
+  font-size: 20px;
+  top: 12px;
+  left: 10px;
+}
+
+.lesson-type {
+  position: absolute;
+  background-color: rgb(156, 0, 0);
+  padding: 5px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-weight: bold;
+  right: 40px;
+  top: 12px;
+}
+
+.remove-btn {
+  position: absolute;
+  background-color: rgb(0, 0, 0);
+  width: 15px;
+  text-align: center;
+  padding: 5px;
+  border-radius: 15px;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-weight: bold;
+  right: 10px;
+  top: 12px;
+  cursor: pointer;
+}
+
+.course-action-btn {
+  position: relative;
+  font-size: 30px;
+  background-color: rgb(0, 132, 255);
+  color: #fff;
+  padding: 10px;
+  top: 12px;
+  left: 20px;
+  border-radius: 10px;
+  margin-left: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.course-details {
+  position: relative;
+  height: 800px;
+}
+
+.nca {
+  position: absolute;
+  text-align: center;
+  width: 800px;
+  font-size: 35px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.3);
+  top: 400px;
+}
+
+.controls {
+  position: relative;
+  padding: 5px;
+  width: 800px;
+}
+
+.controls > button {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin: auto;
+}
+
+.course-title {
+  position: relative;
+  left: 20px;
+  font-size: 40px;
+}
+
+.course-category {
+  position: relative;
+  left: 22px;
+  font-size: 16px;
+  top: 5px;
+  background-color: rgb(255, 68, 68);
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  padding: 5px;
+}
+
+.course-lesson-count {
+  position: relative;
+  left: 28px;
+  font-size: 16px;
+  top: 5px;
+  background-color: rgb(255, 227, 68);
+  color: rgb(17, 17, 17);
+  display: inline-block;
+  padding: 5px;
+}
+
+.edit-course-button {
+  position: relative;
+  left: 34px;
+  font-size: 16px;
+  top: 5px;
+  background-color: rgb(109, 68, 255);
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.course-lessons {
+  position: relative;
+  top: 30px;
+}
